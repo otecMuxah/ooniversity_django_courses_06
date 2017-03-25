@@ -8,11 +8,19 @@
     <div class="inner-wrapper">
         <h2 class="header header--course-desc">Description - Hardcore Python Course</h2>
         <strong>Program</strong>
-        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dignissimos dolorum eaque enim eveniet excepturi ipsa maxime, molestiae odio, pariatur quasi quia quis sapiente sunt voluptatem. Cupiditate iure labore quaerat.</p>
-        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dignissimos dolorum eaque enim eveniet excepturi ipsa maxime, molestiae odio, pariatur quasi quia quis sapiente sunt voluptatem. Cupiditate iure labore quaerat.</p>
-        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dignissimos dolorum eaque enim eveniet excepturi ipsa maxime, molestiae odio, pariatur quasi quia quis sapiente sunt voluptatem. Cupiditate iure labore quaerat.</p>
-        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dignissimos dolorum eaque enim eveniet excepturi ipsa maxime, molestiae odio, pariatur quasi quia quis sapiente sunt voluptatem. Cupiditate iure labore quaerat.</p>
-        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dignissimos dolorum eaque enim eveniet excepturi ipsa maxime, molestiae odio, pariatur quasi quia quis sapiente sunt voluptatem. Cupiditate iure labore quaerat.</p>
+        <ul class="course__table">
+            <li class="course__row">
+                <span class="course__cell"></span>
+                <span class="course__cell"></span>
+            </li>
+            {% for course in courses %}
+                <li class="course__row">
+                <span class="course__cell"><a href="{% url 'courses:detail' course.id %}">{{ course.name }}</a></span>
+                <span class="course__cell">{{ course.short_description }}</span>
+            </li>
+            {% endfor %}
+
+        </ul>
     </div>
 </main>
 {% endblock content %}

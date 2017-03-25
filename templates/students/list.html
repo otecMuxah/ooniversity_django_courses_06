@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}HappyBursa{% endblock %}
+
+{% block content %}
+<main class="main">
+    <h1 class="header main__header--course-name">Students list</h1>
+    <div class="inner-wrapper">
+        <h2 class="header header--course-desc">Description - Hardcore Python Course</h2>
+        <strong>Program</strong>
+        <ul class="course__table">
+            <li class="course__row">
+                <span class="course__cell"></span>
+                <span class="course__cell"></span>
+                <span class="course__cell"></span>
+                <span class="course__cell"></span>
+                <span class="course__cell"></span>
+            </li>
+            {% for student in students_list %}
+                <li class="course__row">
+                    <span class="course__cell">{{ student.id }}</span>
+                    <span class="course__cell"><a href="{% url 'students:detail' student.id %}">{{ student.name }}</a></span>
+                    <span class="course__cell">{{ student.address }}</span>
+                    <span class="course__cell">{{ student.skype }}</span>
+                    <span class="course__cell">
+                        {% for course in student.courses.all %}
+                          <div><a href='{% url 'courses:detail' course.id  %}'>{{ course }}</a></div>
+                        {% endfor %}
+                    </span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</main>
+{% endblock content %}

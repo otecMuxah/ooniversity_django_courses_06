@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}HappyBursa{% endblock %}
+
+{% block content %}
+<main class="main">
+    <h1 class="header main__header--course-name">{{student.name}} {{student.surname}}</h1>
+    <div class="inner-wrapper">
+        <ul class="course__table">
+            <li class="course__row">
+                <span class="course__cell">дата рождения</span>
+                <span class="course__cell">адрес</span>
+                <span class="course__cell">почта</span>
+                <span class="course__cell">телефон</span>
+                <span class="course__cell">skype</span>
+                <span class="course__cell">курсы</span>
+            </li>
+            <li class="course__row">
+                <span class="course__cell">{{student.date_of_birth|date:"N d, Y"}}</span>
+                <span class="course__cell">{{student.address}}</span>
+                <span class="course__cell">{{student.email}}</span>
+                <span class="course__cell">{{student.phone}}</span>
+                <span class="course__cell">{{student.skype}}</span>
+                <span class="course__cell">
+                    {% for course in student.courses.all %}
+                      <div><a href='{% url 'courses:detail' course.id  %}'>{{ course }}</a></div>
+                    {% endfor %}
+                </span>
+            </li>
+        </ul>
+    </div>
+</main>
+{% endblock content %}
