@@ -3,31 +3,57 @@
 {% block title %}HappyBursa{% endblock %}
 
 {% block content %}
-<main class="main">
-    <h1 class="header main__header--course-name">{{student.name}} {{student.surname}}</h1>
-    <div class="inner-wrapper">
-        <ul class="course__table">
-            <li class="course__row">
-                <span class="course__cell">дата рождения</span>
-                <span class="course__cell">адрес</span>
-                <span class="course__cell">почта</span>
-                <span class="course__cell">телефон</span>
-                <span class="course__cell">skype</span>
-                <span class="course__cell">курсы</span>
-            </li>
-            <li class="course__row">
-                <span class="course__cell">{{coach.date_of_birth|date:"N d, Y"}}</span>
-                <span class="course__cell">{{coach.address}}</span>
-                <span class="course__cell">{{coach.email}}</span>
-                <span class="course__cell">{{coach.phone}}</span>
-                <span class="course__cell">{{coach.skype}}</span>
-                <span class="course__cell">
-                    {% for course in student.courses.all %}
-                      <div><a href='{% url 'courses:detail' course.id  %}'>{{ course }}</a></div>
-                    {% endfor %}
-                </span>
-            </li>
-        </ul>
-    </div>
-</main>
+    <main class="main">
+        <div class="container">
+            <h2 align="center">{{ coach.get_name }} {{ coach.get_surname }}</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tr>
+                        <td>дата рождения</td>
+                        <td>{{ coach.date_of_birth }}</td>
+                    </tr>
+                    <tr>
+                        <td>адрес</td>
+                        <td>{{ coach.address }}</td>
+                    </tr>
+                    <tr>
+                        <td>логин skype</td>
+                        <td>{{ coach.skype }}</td>
+                    </tr>
+                    <tr>
+                        <td>email</td>
+                        <td>{{ coach.user.email }}</td>
+                    </tr>
+                    <tr>
+                        <td>телефон</td>
+                        <td>{{ coach.phone }}</td>
+                    </tr>
+                    <tr>
+                        <td>курсы учитель</td>
+                        <td>{% for course_item in coach_courses %}
+                            <p>
+                                <a href="{% url 'courses:detail' course_item.id %}">{{ course_item.name }}</a>студенты
+                                курса
+                                <a href="{% url 'students:list_view' %}?course_id={{ course_item.id }}"><span
+                                        class="glyphicon glyphicon-new-window"></span></a>
+                            </p>
+                        {% endfor %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>курсы ассистент</td>
+                        <td>{% for course_item in assistant_courses %}
+                            <p>
+                                <a href="{% url 'courses:detail' course_item.id %}">{{ course_item.name }}</a>студенты
+                                курса
+                                <a href="{% url 'students:list_view' %}?course_id={{ course_item.id }}"><span
+                                        class="glyphicon glyphicon-new-window"></span></a>
+                            </p>
+                        {% endfor %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
 {% endblock content %}
