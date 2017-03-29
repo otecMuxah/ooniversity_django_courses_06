@@ -19,8 +19,7 @@ class Coach(models.Model):
         return self.user.username
 
     def get_name(self):
-        return '%s' % (self.user.first_name)
-
+        return '%s' % self.user.first_name
 
     def get_surname(self):
-        return '%s' % (self.user.last_name)
+        return '%s' % self.user.last_name

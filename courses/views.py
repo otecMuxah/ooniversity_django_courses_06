@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.shortcuts import render
 
-from . models import Course, Lesson
+from courses.models import Course, Lesson
 
 def detail(request, course_id):
     course = Course.objects.get(id=course_id)

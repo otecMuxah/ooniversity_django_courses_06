@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
-from . models import Coach
+from coaches.models import Coach
 from courses.models import Course
+
 
 def detail(request, coach_id):
     coach = Coach.objects.get(id=coach_id)
