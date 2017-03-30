@@ -19,7 +19,7 @@
             {% for student in students_list %}
                 <li class="course__row">
                     <span class="course__cell">{{ student.id }}</span>
-                    <span class="course__cell"><a href="{% url 'students:detail' student.id %}">{{ student.name }}</a></span>
+                    <span class="course__cell"><a href="{% url 'students:detail' student.id %}">{{ student.full_name }}</a></span>
                     <span class="course__cell">{{ student.address }}</span>
                     <span class="course__cell">{{ student.skype }}</span>
                     <span class="course__cell">
