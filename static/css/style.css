@@ -92,6 +92,9 @@ body {
 .table-responsive a {
     margin-right: 10px;
 }
+.inner-wrapper {
+    width: 100%;
+}
 @media screen and (max-width: 768px) {
     .table__main-holder {
         flex-wrap: wrap;

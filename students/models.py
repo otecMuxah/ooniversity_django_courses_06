@@ -10,7 +10,7 @@ class Student(models.Model):
         return '{} {}'.format(self.surname, self.name)
 
     def full_name(self):
-        return '{} {}'.format(self.name, self.surname)
+        return '{} {}'.format(self.surname, self.name)
 
     name = models.CharField(max_length=200)
     surname = models.CharField(max_length=200)
