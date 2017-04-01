@@ -40,21 +40,22 @@ body {
 .table__row {
     display: flex;
     justify-content: space-between;
-    background: #F4C63D;
+    background: #eee;
     margin-bottom: 3px;
     padding: 10px 20px;
 }
 .table__row:hover {
-    background: #F4F63D;
+    background: #ccc;
 }
 .table__row--head {
-    background: #c0a16b;
+    background: #aaa;
 }
 .table__cell {
     flex: 1 1 10%;
     display: flex;
     align-items: center;
     padding: 15px;
+
 }
 .table__cell--long {
     flex-basis: 60%;
@@ -87,7 +88,9 @@ body {
     border-bottom: 1px solid #aaa;
 }
 .course__cell {
-    flex: 1 1 50%;
+    flex: 1 1 10%;
+    word-break: break-all;
+    padding: 5px;
 }
 .table-responsive a {
     margin-right: 10px;
@@ -97,6 +100,10 @@ body {
 }
 .width100per {
     width: 100%;
+}
+.quadratic-form {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
 }
 .quadratic-form input[type=number] {
     text-align: center;

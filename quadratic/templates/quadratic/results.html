@@ -6,9 +6,9 @@
     <div class="container">
         <h1>Результат</h1>
         <span>Квадратное уравнение a*x*x + b*x + c = 0</span>
-        <form class="quadratic-form">
+        <form class="quadratic-form" method="get">
             {{ form.as_p }}
-            <input type="submit" value="Результат">
+            <input type="submit" value="Результат" class="btn">
         </form>
 
         <span>{% if discriminant %}Дискриминант: {{ discriminant }}{% endif %}</span>
