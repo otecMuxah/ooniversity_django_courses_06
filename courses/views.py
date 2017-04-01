@@ -15,4 +15,4 @@ def detail(request, course_id):
         'lessons_list': lessons_list
 
     }
-    return render(request, 'detail.html', context)
+    return render(request, 'courses/detail.html', context)
