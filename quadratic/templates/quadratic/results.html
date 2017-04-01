@@ -6,12 +6,12 @@
     <div class="container">
         <h1>Результат</h1>
         <span>Квадратное уравнение a*x*x + b*x + c = 0</span>
-        <form>
+        <form class="quadratic-form">
             {{ form.as_p }}
-            <input type="submit">
+            <input type="submit" value="Результат">
         </form>
 
-        <span>Дискриминант: {{ discriminant }}</span>
+        <span>{% if discriminant %}Дискриминант: {{ discriminant }}{% endif %}</span>
         <div>{{ result }}</div>
     </div>
 {% endblock quadratic %}>
