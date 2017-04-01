@@ -15,8 +15,8 @@
             </li>
             {% for course in courses %}
                 <li class="course__row">
-                <span class="course__cell"><a href="{% url 'courses:detail' course.id %}">{{ course.name }}</a></span>
-                <span class="course__cell">{{ course.short_description }}</span>
+                <span class="course__cell"><a href="{% url 'courses:detail' course.id %}">{{ course.name|upper }}</a></span>
+                <span class="course__cell">{{ course.short_description|title }}</span>
             </li>
             {% endfor %}
 

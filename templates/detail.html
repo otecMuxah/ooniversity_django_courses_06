@@ -4,9 +4,9 @@
 
 {% block content %}
 <main class="main">
-    <div class="jumbotron">
+    <div class="jumbotron width100per">
         <h1 class="header main__header--course-name">{{ course.name }}</h1>
-        <span class="course-description">{{ course.description }}</span>
+        <span class="course-description">{{ course.description|truncatechars:35 }}</span>
     </div>
 
     <div class="well">
