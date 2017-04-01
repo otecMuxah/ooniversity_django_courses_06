@@ -6,19 +6,13 @@
     <div class="container">
         <h1>Результат</h1>
         <span>Квадратное уравнение a*x*x + b*x + c = 0</span>
-        <ul class="quadratic-list">
-            <li>a = {{ a }}
-                <div>{{ error_message_a }}</div>
-            </li>
-            <li>b = {{ b }}
-                <div>{{ error_message_b }}</div>
-            </li>
-            <li>c = {{ c }}
-                <div>{{ error_message_c }}</div>
-            </li>
-        </ul>
-        <span>{{ discriminant }}</span>
-        <span>{{ result }}</span>
+        <form>
+            {{ form.as_p }}
+            <input type="submit">
+        </form>
+
+        <span>Дискриминант: {{ discriminant }}</span>
+        <div>{{ result }}</div>
     </div>
 {% endblock quadratic %}>
 

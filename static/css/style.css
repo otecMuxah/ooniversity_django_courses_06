@@ -98,6 +98,9 @@ body {
 .width100per {
     width: 100%;
 }
+label {
+    width: 100%;
+}
 @media screen and (max-width: 768px) {
     .table__main-holder {
         flex-wrap: wrap;
