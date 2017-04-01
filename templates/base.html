@@ -12,8 +12,10 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </head>
 <body>
-{% include 'navigation_include.html' %}
+{% include 'include/navigation_include.html' %}
 {% block content %}
 {% endblock content %}
+{% block quadratic %}
+{% endblock quadratic %}
 </body>
 </html>
