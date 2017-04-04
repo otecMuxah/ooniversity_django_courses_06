@@ -7,16 +7,19 @@
     <h1 class="header main__header--course-name">HappyBursa</h1>
     <div class="inner-wrapper">
         <h2 class="header header--course-desc">Description - Hardcore Python Course</h2>
+        <a href="{% url 'courses:add' %}" class="btn btn-default">Add new course</a>
         <strong>Program</strong>
         <ul class="course__table">
             <li class="course__row">
-                <span class="course__cell"></span>
-                <span class="course__cell"></span>
+                <span class="course__cell">Course name</span>
+                <span class="course__cell">Course description</span>
+                <span class="course__cell">Edit</span>
             </li>
             {% for course in courses %}
                 <li class="course__row">
                 <span class="course__cell"><a href="{% url 'courses:detail' course.id %}">{{ course.name|upper }}</a></span>
                 <span class="course__cell">{{ course.short_description|title }}</span>
+                <span class="course__cell"><a href="{% url 'courses:edit' course.id %}" class="btn btn-success">Edit</a></span>
             </li>
             {% endfor %}
 
