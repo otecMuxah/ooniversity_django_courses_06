@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}HappyBursa{% endblock %}
+
+{% block content %}
+    <h1>Создание нового студента</h1>
+    <form class="add-student-form" method="post">
+        {{ form.as_p }}
+        <input type="submit" value="Добавить Студента" class="btn btn-success">
+    </form>
+{% endblock content %}

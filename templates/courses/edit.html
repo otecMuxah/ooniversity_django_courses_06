@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}HappyBursa{% endblock %}
+
+{% block content %}
+    <h1>Редактирование {{ student.name }} {{ student.surname }}</h1>
+    {% if messages %}
+        <div class="success-bg">
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    <form class="add-student-form edit-student-form" method="post">
+        {{ form.as_p }}
+        <input type="submit" value="Изменить" class="btn btn-success">
+    </form>
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}HappyBursa{% endblock %}
+
+{% block content %}
+    <main class="main">
+        <div class="container">
+            <div class="jumbotron">
+                <p>Студент {{ student.full_name }} будет удален.</p>
+                <form method='post'>
+                    {% csrf_token %}
+                    <input type="submit" value="Удалить"/>
+                </form>
+            </div>
+        </div>
+    </main>
+{% endblock content %}
+
