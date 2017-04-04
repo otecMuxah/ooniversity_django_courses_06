@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from forms import StudentModelForm
+from students.forms import StudentModelForm
 from students.models import Student
 from courses.models import Course
 from django.views.decorators.csrf import csrf_exempt
