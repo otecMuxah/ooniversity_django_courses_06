@@ -14,12 +14,14 @@
                 <span class="course__cell">Course name</span>
                 <span class="course__cell">Course description</span>
                 <span class="course__cell">Edit</span>
+                <span class="course__cell">Delete</span>
             </li>
             {% for course in courses %}
                 <li class="course__row">
                 <span class="course__cell"><a href="{% url 'courses:detail' course.id %}">{{ course.name|upper }}</a></span>
                 <span class="course__cell">{{ course.short_description|title }}</span>
                 <span class="course__cell"><a href="{% url 'courses:edit' course.id %}" class="btn btn-success">Edit</a></span>
+                <span class="course__cell"><a href="{% url 'courses:remove' course.id %}" class="btn btn-success">Delete</a></span>
             </li>
             {% endfor %}
 
