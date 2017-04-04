@@ -1,6 +1,6 @@
 from django.conf.urls import include, url
 
-from . import views
+from courses import views
 
 app_name = 'courses'
 
