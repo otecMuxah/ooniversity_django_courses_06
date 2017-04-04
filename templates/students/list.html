@@ -4,10 +4,20 @@
 
 {% block content %}
 <main class="main">
+    {% if messages %}
+        <div class="success-bg">
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
     <h1 class="header main__header--course-name">Students list</h1>
     <div class="inner-wrapper">
         <h2 class="header header--course-desc">Description - Hardcore Python Course</h2>
-        <strong>Program</strong>
+        <a href="{% url 'students:create' %}" class="btn btn-success">Add new Student</a>
+        <div>List</div>
         <ul class="course__table">
             <li class="course__row">
                 <span class="course__cell">#</span>
@@ -15,6 +25,8 @@
                 <span class="course__cell">Адрес</span>
                 <span class="course__cell">Скайп</span>
                 <span class="course__cell">Курс</span>
+                <span class="course__cell">Редактировать</span>
+                <span class="course__cell">Удалить</span>
             </li>
             {% for student in students_list %}
                 <li class="course__row">
@@ -27,6 +39,9 @@
                           <div><a href='{% url 'courses:detail' course.id  %}'>{{ course }}</a></div>
                         {% endfor %}
                     </span>
+                    <span class="course__cell"><a href="{% url 'students:edit' student.id %}" class="btn btn-success">Edit</a></span>
+                    <span class="course__cell"><a class="btn btn-danger" role="button" href="{% url 'students:remove' student.id %}">Delete</a></span>
+                </a>
                 </li>
             {% endfor %}
         </ul>

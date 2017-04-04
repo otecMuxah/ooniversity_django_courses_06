@@ -1,6 +1,11 @@
 body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 .main {
     display: flex;
     flex-direction: column;
@@ -107,6 +112,29 @@ body {
 }
 .quadratic-form input[type=number] {
     text-align: center;
+}
+.add-student-form p,
+.edit-student-form p {
+    display: flex;
+}
+.add-student-form label,
+.add-student-form input {
+    flex: 1 1 20%;
+    min-width: 100px;
+    padding: 5px;
+}
+.add-student-form label{
+    text-align: right;
+    margin-right: 20px;
+    max-width: 100px;
+}
+.edit-student-form {
+    width: 100%;
+}
+.success-bg {
+    width: 100%;
+    background: #69B569;
+    color: #fff;
 }
 @media screen and (max-width: 768px) {
     .table__main-holder {
