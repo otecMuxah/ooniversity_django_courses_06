@@ -16,7 +16,7 @@ class CourseDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Course creation'
         lessons = Lesson.objects.filter(course=self.kwargs['pk'])
-        context['lesson_list'] = lessons
+        context['lessons_list'] = lessons
         return context
 
 

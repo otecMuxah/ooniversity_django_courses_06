@@ -2,11 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from students.forms import StudentModelForm
 from students.models import Student
-from courses.models import Course
-from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
-from django.views.generic.edit import FormView, CreateView, UpdateView, DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
 
@@ -15,13 +13,13 @@ class StudentListView(ListView):
     model = Student
     template_name = 'students/list.html'
     context_object_name = 'students_list'
-    paginate_by = 2
 
     def get_queryset(self):
         qs = super().get_queryset()
+        print(self.request.GET.get('course_id'))
         course_id = self.request.GET.get('course_id')
         if course_id:
-            qs = qs.filter(courses_id=course_id)
+            qs = qs.filter(courses__id=course_id)
         return qs
 
     def get_context_data(self, **kwargs):

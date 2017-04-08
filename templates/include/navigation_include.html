@@ -16,7 +16,7 @@
             <ul class="nav navbar-nav">
                 <li class="{% if request.path == '/' %}active{% endif %}"><a href="{% url 'index' %}">Main</a></li>
                 <li class="{% if request.path == '/contact/' %}active{% endif %}"><a href="{% url 'contact' %}">Contacts</a></li>
-                <li class="{% if request.path == '/students/' %}active{% endif %}"><a href="{% url 'students:list_view' %}">Students</a></li>
+                <li class="{% if request.path == '/students/' %}active{% endif %}"><a href="{% url 'students:list_view' %}?course_id={{ course.id }}">Students</a></li>
                 <li class="{% if request.path == '/quadratic/results/' %}active{% endif %}"><a href="{% url 'results' %}">Quadratic</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
