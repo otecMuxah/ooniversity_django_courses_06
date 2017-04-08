@@ -9,21 +9,14 @@ from django.urls import reverse_lazy
 
 class CourseDetailView(DetailView):
     model = Course
-    context_object_name = 'course'
     template_name = 'courses/detail.html'
-
-    def get_queryset(self):
-        qs = super().get_queryset()
-        course_id = self.request.GET.get('course_id', None)
-        if course_id:
-            qs = qs.filter(courses__id=course_id)
-
-        return qs
+    context_object_name = 'course'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['lessons_list'] = Lesson.objects.filter(course=self.object.pk)
-        context['course'] = Course.objects.get(id=self.object.pk)
+        context['title'] = 'Course creation'
+        lessons = Lesson.objects.filter(course=self.kwargs['pk'])
+        context['lesson_list'] = lessons
         return context
 
 
