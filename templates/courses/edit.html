@@ -14,6 +14,7 @@
         </div>
     {% endif %}
     <form class="add-student-form edit-student-form" method="post">
+        {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Изменить" class="btn btn-success">
     </form>

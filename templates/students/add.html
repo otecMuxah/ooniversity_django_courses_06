@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}HappyBursa{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 
 {% block content %}
     <h1>Создание нового студента</h1>
     <form class="add-student-form" method="post">
+        {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Добавить Студента" class="btn btn-success">
     </form>

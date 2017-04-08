@@ -8,6 +8,7 @@
             <div class="jumbotron">
                 <p>Курс {{ course.name }} будет удален.</p>
                 <form method='post'>
+                    {% csrf_token %}
                     <input type="submit" value="Удалить"/>
                 </form>
             </div>
