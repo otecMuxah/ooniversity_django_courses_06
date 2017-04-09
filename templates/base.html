@@ -14,9 +14,11 @@
 <body>
 {% include 'include/navigation_include.html' %}
 {% include 'include/message_include.html' %}
-{% block content %}
-{% endblock content %}
-{% block quadratic %}
-{% endblock quadratic %}
+<div class="main_wrapper">
+    {% block content %}
+    {% endblock content %}
+    {% block quadratic %}
+    {% endblock quadratic %}
+</div>
 </body>
 </html>

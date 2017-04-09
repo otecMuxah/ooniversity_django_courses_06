@@ -8,17 +8,23 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{% url 'index' %}">-= HappyBursa =-</a>
+            <a class="navbar-brand" href="{% url 'index' %}">
+                <div class="logo">
+                    <div class="leftEye"></div>
+                    <div class="rightEye"></div>
+                    <div class="mouth"></div>
+                </div>
+            </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="{% if request.path == '/' %}active{% endif %}"><a href="{% url 'index' %}">Main</a></li>
-                <li class="{% if request.path == '/contact/' %}active{% endif %}"><a href="{% url 'contact' %}">Contacts</a></li>
-                <li class="{% if request.path == '/students/' %}active{% endif %}"><a href="{% url 'students:list_view' %}?course_id={{ course.id }}">Students</a></li>
-                <li class="{% if request.path == '/quadratic/results/' %}active{% endif %}"><a href="{% url 'results' %}">Quadratic</a></li>
-                <li class="{% if request.path == '/feedback/' %}active{% endif %}"><a href="{% url 'feedback' %}">Feedback</a></li>
+                <li class="{% if 'contact/' in request.path %}active{% endif %}"><a href="{% url 'contact' %}">Contacts</a></li>
+                <li class="{% if 'students/' in request.path %}active{% endif %}"><a href="{% url 'students:list_view' %}?course_id={{ course.id }}">Students</a></li>
+                <li class="{% if 'quadratic/' in request.path %}active{% endif %}"><a href="{% url 'results' %}">Quadratic</a></li>
+                <li class="{% if 'feedback/' in request.path %}active{% endif %}"><a href="{% url 'feedback' %}">Feedback</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

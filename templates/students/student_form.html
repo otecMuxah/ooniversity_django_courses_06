@@ -7,6 +7,6 @@
     <form class="add-student-form" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Добавить Студента" class="btn btn-success">
+        <input type="submit" value="{{ page_title }}" class="btn btn-success">
     </form>
 {% endblock content %}
