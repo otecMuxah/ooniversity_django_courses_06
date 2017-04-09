@@ -28,7 +28,7 @@
                 <span class="course__cell">Редактировать</span>
                 <span class="course__cell">Удалить</span>
             </li>
-            {% for student in students_list %}
+            {% for student in object_list %}
                 <li class="course__row">
                     <span class="course__cell">{{ student.id }}</span>
                     <span class="course__cell"><a href="{% url 'students:detail' student.id %}">{{ student.full_name }}</a></span>
