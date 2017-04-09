@@ -7,10 +7,10 @@
     <h1 class="header main__header--course-name">Students list</h1>
     <div class="inner-wrapper">
         <h2 class="header header--course-desc">Description - Hardcore Python Course</h2>
-        <a href="{% url 'students:add' %}" class="btn btn-success">Add new Student</a>
-        <div>List</div>
+        <a href="{% url 'students:add' %}" class="btn btn-success margin-bot">Add new Student</a>
+        <div class="margin-bot">List</div>
         <ul class="course__table">
-            <li class="course__row">
+            <li class="course__row course__row--head">
                 <span class="course__cell">#</span>
                 <span class="course__cell">Имя Фамилия</span>
                 <span class="course__cell">Адрес</span>

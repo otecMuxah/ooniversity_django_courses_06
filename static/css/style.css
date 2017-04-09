@@ -150,8 +150,11 @@ ul {
     width: 100px;
 }
 .logo {
-    transform: scale(0.6);
-    margin-top: 10px;
+    transform: scale(0.4);
+    margin-top: -41px;
+    position: relative;
+    height: 100px;
+    width: 100px;
 }
 
 
@@ -397,13 +400,23 @@ body .mouth {
             transform: translate(-50%, -50%);
   }
 }
-
+.margin-bot {
+    margin-bottom: 20px;
+}
 
 
 
 @media screen and (max-width: 768px) {
     .table__main-holder {
         flex-wrap: wrap;
+    }
+    .course__row {
+        flex-direction: column;
+        margin-bottom: 20px;
+        background: #ddd;
+    }
+    .course__row--head {
+        display: none;
     }
 }
 
