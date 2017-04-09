@@ -4,15 +4,6 @@
 
 {% block content %}
 <main class="main">
-    {% if messages %}
-        <div class="success-bg">
-            <ul class="messages">
-                {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
     <h1 class="header main__header--course-name">Students list</h1>
     <div class="inner-wrapper">
         <h2 class="header header--course-desc">Description - Hardcore Python Course</h2>

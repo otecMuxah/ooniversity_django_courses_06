@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'quadratic',
     'polls.apps.PollsConfig',
     'coaches',
+    'feedbacks',
 ]
 
 MIDDLEWARE = [

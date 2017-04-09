@@ -7,7 +7,7 @@ from quadratic.forms import QuadraticForm
 from django.views.decorators.csrf import csrf_exempt
 
 
-@csrf_exempt
+
 def quadratic_results(request):
     context = {}
 
