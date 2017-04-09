@@ -3,7 +3,7 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
-    <h1>Создание нового студента</h1>
+    <h1>{{ page_title }}</h1>
     <form class="add-student-form" method="post">
         {% csrf_token %}
         {{ form.as_p }}
