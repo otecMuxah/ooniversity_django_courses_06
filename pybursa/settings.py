@@ -129,6 +129,6 @@ STATICFILES_DIRS = [
 ]
 
 EMAIL_HOST = "localhost"
-EMAIL_PORT = "2525"
+EMAIL_PORT = "1025"
 
 ADMINS = (('superpuper', 'suxx_2000@hotmail.com'),)
