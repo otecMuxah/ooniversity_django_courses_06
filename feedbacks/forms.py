@@ -5,4 +5,4 @@ from feedbacks.models import Feedback
 class FeedbackModelForm(forms.ModelForm):
     class Meta:
         model = Feedback
-        exclude = []
+        fields = '__all__'
