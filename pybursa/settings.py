@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'quadratic',
     'polls.apps.PollsConfig',
     'coaches',
-    'feedbacks',
+    'feedbacks.apps.FeedbacksConfig',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +60,7 @@ ROOT_URLCONF = 'pybursa.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'pybursa/templates'), os.path.join(BASE_DIR, 'quadratic/templates'),],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'quadratic/templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,3 +127,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+EMAIL_HOST = "localhost"
+EMAIL_PORT = "2525"
+
+ADMINS = (('superpuper', 'suxx_2000@hotmail.com'),)
