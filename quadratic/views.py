@@ -4,7 +4,7 @@
 from django.shortcuts import render
 from math import sqrt
 from quadratic.forms import QuadraticForm
-from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
 
 
 

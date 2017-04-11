@@ -37,11 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'courses',
-    'students',
-    'quadratic',
+    'courses.apps.CoursesConfig',
+    'students.apps.StudentsConfig',
+    'quadratic.apps.QuadraticConfig',
     'polls.apps.PollsConfig',
-    'coaches',
+    'coaches.apps.CoachesConfig',
     'feedbacks.apps.FeedbacksConfig',
 ]
 
