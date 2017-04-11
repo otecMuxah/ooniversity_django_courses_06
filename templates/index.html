@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}HappyBursa{% endblock %}
+
+{% block content %}
+<main class="main">
+    <h1 class="header main__header--course-name">HappyBursa</h1>
+    <div class="inner-wrapper">
+        <h2 class="header header--course-desc">Description</h2>
+        <div class="jumbotron text-align-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias, consequatur et ex facere ipsa iure minima neque, officia provident qui vel? Alias cumque laudantium magni mollitia, placeat quia! Voluptate.</div>
+        <a href="{% url 'courses:add' %}" class="btn btn-default margin-bot">Add new course</a>
+        <div class="margin-bot">Our Courses:</div>
+        <ul class="course__table">
+            <li class="course__row course__row--head">
+                <span class="course__cell">Course name</span>
+                <span class="course__cell">Course description</span>
+                <span class="course__cell">Edit</span>
+                <span class="course__cell">Delete</span>
+            </li>
+            {% for course in courses %}
+                <li class="course__row">
+                <span class="course__cell"><a href="{% url 'courses:detail' course.id %}">{{ course.name|upper }}</a></span>
+                <span class="course__cell">{{ course.short_description|title }}</span>
+                <span class="course__cell"><a href="{% url 'courses:edit' course.id %}" class="btn btn-success">Edit</a></span>
+                <span class="course__cell"><a href="{% url 'courses:remove' course.id %}" class="btn btn-success">Delete</a></span>
+            </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+</main>
+{% endblock content %}

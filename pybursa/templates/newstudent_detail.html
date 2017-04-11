@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}HappyBursa{% endblock %}
+
+{% block content %}
+<main class="student-detail">
+    <h1 class="student-detail__title">Ivanov Ivan</h1>
+    <img src="{% static 'images/Ivan-Dorn.jpg' %}" alt="Student Photo" class="student-detail__image">
+    <a href="{% url 'student_detail' %}" class="student-detail__about">Студент о себе</a>
+    <div class="table__main-holder">
+        <div class="table__wrapper">
+            <span class="student-detail__table-title">Students card</span>
+            <div class="table student-detail__table">
+                <div class="table__row"><span class="table__cell">Surname</span><span class="table__cell">Ivanov</span></div>
+                <div class="table__row"><span class="table__cell">Name</span><span class="table__cell">Ivan</span></div>
+                <div class="table__row"><span class="table__cell">Patronymic</span><span class="table__cell">Ivanovi4</span></div>
+                <div class="table__row"><span class="table__cell">Rating</span><span class="table__cell">20</span></div>
+                <div class="table__row"><span class="table__cell">Average Grade</span><span class="table__cell">99.9</span></div>
+                <div class="table__row"><span class="table__cell">Package</span><span class="table__cell">Std</span></div>
+                <div class="table__row"><span class="table__cell">Birth Date</span><span class="table__cell">10/02/1981</span></div>
+                <div class="table__row"><span class="table__cell">Address</span><span class="table__cell">Украина Киев Незалежности 1</span></div>
+                <div class="table__row"><span class="table__cell">E-mail</span><span class="table__cell">00010</span></div>
+                <div class="table__row"><span class="table__cell">Skype</span><span class="table__cell">Ivanov212</span></div>
+            </div>
+        </div>
+        <div class="table__wrapper">
+            <span class="student-detail__table-title">Performance</span>
+            <div class="table performance-table">
+                <div class="table__row table__row--head">
+                    <span class="table__cell">Course</span>
+                    <span class="table__cell">Week</span>
+                    <span class="table__cell">Control Type</span>
+                    <span class="table__cell">Grade</span>
+                </div>
+                <div class="table__row">
+                    <span class="table__cell">PY101 Введение в Python</span>
+                    <span class="table__cell">Week 1</span>
+                    <span class="table__cell">Tests</span>
+                    <span class="table__cell">99%</span>
+                </div>
+                <div class="table__row">
+                    <span class="table__cell"></span>
+                    <span class="table__cell"></span>
+                    <span class="table__cell">Problem Task #1</span>
+                    <span class="table__cell">100%</span>
+                </div>
+                <div class="table__row">
+                    <span class="table__cell"></span>
+                    <span class="table__cell"></span>
+                    <span class="table__cell">Problem Task #2</span>
+                    <span class="table__cell">100%</span>
+                </div>
+                <div class="table__row">
+                    <span class="table__cell"></span>
+                    <span class="table__cell">Week 2</span>
+                    <span class="table__cell">Tests</span>
+                    <span class="table__cell">100%</span>
+                </div>
+                <div class="table__row">
+                    <span class="table__cell"></span>
+                    <span class="table__cell"></span>
+                    <span class="table__cell">Problem Task #1</span>
+                    <span class="table__cell">100%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</main>
+{% endblock content %}
